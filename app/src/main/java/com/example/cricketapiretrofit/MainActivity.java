@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private WithdrawAdapter withdrawAdapter;
     private RecyclerView profileRecycler;
 
+    private TextView errorshowTV,errorresultshowTV;
+    private TextView error_reportshowTV,error_reportresultshowTV;
+    private TextView balanceshowTV,balanceresultshowTV;
+    private TextView chargeshowTV,chargeresultshowTV;
+
     private List<ProfileModel> profileModelList = new ArrayList<>();
 
     JsonObject jsonObject;
@@ -39,12 +44,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        profileRecycler = findViewById(R.id.continentRecyclerView);
 
-
+        initwidget();
 
        // checkProfilePost();
         checkInfo();
+
+    }
+
+    private void initwidget() {
+
+        //profileRecycler = findViewById(R.id.continentRecyclerView);
+        errorshowTV = findViewById(R.id.showErrorTV);
+        errorresultshowTV = findViewById(R.id.showErrorResultTV);
+        error_reportshowTV = findViewById(R.id.e);
+        error_reportresultshowTV = findViewById(R.id.showWithdrawinfoTV);
+        balanceshowTV = findViewById(R.id.showInfoTV);
+        balanceresultshowTV = findViewById(R.id.showInfoTV);
+        chargeshowTV = findViewById(R.id.showInfoTV);
+        chargeresultshowTV = findViewById(R.id.showInfoTV);
 
     }
 
@@ -66,14 +84,17 @@ public class MainActivity extends AppCompatActivity {
                         jsonObject = response.body();
 
 
-                        Toast.makeText(MainActivity.this, ""+jsonObject.get("error").getAsString(), Toast.LENGTH_SHORT).show();
+                        showTV.setText(jsonObject.get("error").getAsString());
+                        withdrawTV.setText(jsonObject.get("error_report").getAsString());
 
+/*
 
                         LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(MainActivity.this);
                         withdrawAdapter = new WithdrawAdapter(MainActivity.this,jsonObject);
                         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                         profileRecycler.setLayoutManager(linearLayoutManager);
                         profileRecycler.setAdapter(withdrawAdapter);
+*/
 
 
 

@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private WithdrawAdapter withdrawAdapter;
     private RecyclerView profileRecycler;
 
-    private TextView errorshowTV,errorresultshowTV;
+    private TextView errorshowTV, errorresultshowTV;
     private TextView error_reportshowTV,error_reportresultshowTV;
     private TextView balanceshowTV,balanceresultshowTV;
     private TextView chargeshowTV,chargeresultshowTV;
 
     private List<ProfileModel> profileModelList = new ArrayList<>();
 
-    JsonObject jsonObject;
+    JsonObject jsonObject = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +45,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        initwidget();
+        initWidget();
 
        // checkProfilePost();
         checkInfo();
 
     }
 
-    private void initwidget() {
+    private void initWidget() {
 
         //profileRecycler = findViewById(R.id.continentRecyclerView);
         errorshowTV = findViewById(R.id.showErrorTV);
         errorresultshowTV = findViewById(R.id.showErrorResultTV);
-        error_reportshowTV = findViewById(R.id.e);
-        error_reportresultshowTV = findViewById(R.id.showWithdrawinfoTV);
-        balanceshowTV = findViewById(R.id.showInfoTV);
-        balanceresultshowTV = findViewById(R.id.showInfoTV);
-        chargeshowTV = findViewById(R.id.showInfoTV);
-        chargeresultshowTV = findViewById(R.id.showInfoTV);
+        error_reportshowTV = findViewById(R.id.showError_ReportTV);
+        error_reportresultshowTV = findViewById(R.id.showError_ReportResultTV);
+        balanceshowTV = findViewById(R.id.showBalanceTV);
+        balanceresultshowTV = findViewById(R.id.showBalanceResultTV);
+        chargeshowTV = findViewById(R.id.showChargeTV);
+        chargeresultshowTV = findViewById(R.id.showChargeResultTV);
 
     }
 
@@ -72,39 +72,33 @@ public class MainActivity extends AppCompatActivity {
                 .getClient(BaseUrl)
                 .create(ProfileableInterface.class);
 
+
         profileableInterface.getWithdrawInfo("5")
                 .enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-
                         if(!response.isSuccessful()){
                             Toast.makeText(MainActivity.this, ""+response.code(), Toast.LENGTH_SHORT).show();
                         }
 
                         jsonObject = response.body();
+                        
+                        int errorCount = jsonObject.get("error").getAsInt();
+                        String errorResult = jsonObject.get("error_report").getAsString();
+                        String balanceResult = jsonObject.get("balance").getAsString();
+                        String chargeResult = jsonObject.get("charge").getAsString();
 
-
-                        showTV.setText(jsonObject.get("error").getAsString());
-                        withdrawTV.setText(jsonObject.get("error_report").getAsString());
-
-/*
-
-                        LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(MainActivity.this);
-                        withdrawAdapter = new WithdrawAdapter(MainActivity.this,jsonObject);
-                        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                        profileRecycler.setLayoutManager(linearLayoutManager);
-                        profileRecycler.setAdapter(withdrawAdapter);
-*/
-
-
-
+                        errorresultshowTV.setText(""+errorCount);
+                        error_reportresultshowTV.setText(""+errorResult);
+                        balanceresultshowTV.setText(""+balanceResult);
+                        chargeresultshowTV.setText(""+chargeResult);
 
                     }
 
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
 
-                        Toast.makeText(MainActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                        error_reportresultshowTV.setText(t.getMessage());
                     }
                 });
 
@@ -115,9 +109,6 @@ public class MainActivity extends AppCompatActivity {
         final ProfileableInterface profileableInterface = RetrofitClient
                 .getClient(BaseUrl)
                 .create(ProfileableInterface.class);
-
-
-
 
 
         profileableInterface.getProfiles("3")
@@ -140,10 +131,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, ""+profileModel1.getProfiles().get(3).getDetails(), Toast.LENGTH_SHORT).show();*/
                         Log.e("Test", "onResponse: "+profileModel1.getProfiles().get(3).getDetails());
                         Log.e("Test", "onResponse: "+profileModel1.getProfiles().get(3).getDetails());
-
-
-
-
 
                        /* profileAdapter = new ProfileAdapter(MainActivity.this,profileModel1.getProfiles());
                         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this,2);

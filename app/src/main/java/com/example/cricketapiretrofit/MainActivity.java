@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private WithdrawAdapter withdrawAdapter;
     private RecyclerView profileRecycler;
 
-    private TextView errorshowTV,errorresultshowTV;
+    private TextView errorshowTV, errorresultshowTV;
     private TextView error_reportshowTV,error_reportresultshowTV;
     private TextView balanceshowTV,balanceresultshowTV;
     private TextView chargeshowTV,chargeresultshowTV;
 
     private List<ProfileModel> profileModelList = new ArrayList<>();
 
-    JsonObject jsonObject;
+    JsonObject jsonObject = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        initwidget();
+        initWidget();
 
        // checkProfilePost();
         checkInfo();
 
     }
 
-    private void initwidget() {
+    private void initWidget() {
 
         //profileRecycler = findViewById(R.id.continentRecyclerView);
         errorshowTV = findViewById(R.id.showErrorTV);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 .create(ProfileableInterface.class);
 
 
-        profileableInterface.getWithdrawInfo("3")
+        profileableInterface.getWithdrawInfo("5")
                 .enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -82,19 +82,23 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         jsonObject = response.body();
-
+                        
                         int errorCount = jsonObject.get("error").getAsInt();
+                        String errorResult = jsonObject.get("error_report").getAsString();
+                        String balanceResult = jsonObject.get("balance").getAsString();
+                        String chargeResult = jsonObject.get("charge").getAsString();
 
-                        errorresultshowTV.setText(jsonObject.get("error").getAsInt());
-                        error_reportresultshowTV.setText(jsonObject.get("error_report").getAsString());
-                        balanceresultshowTV.setText(jsonObject.get("balance").getAsString());
-                        chargeresultshowTV.setText(jsonObject.get("charge").getAsString());
+                        errorresultshowTV.setText(""+errorCount);
+                        error_reportresultshowTV.setText(""+errorResult);
+                        balanceresultshowTV.setText(""+balanceResult);
+                        chargeresultshowTV.setText(""+chargeResult);
 
                     }
 
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
 
+                        error_reportresultshowTV.setText(t.getMessage());
                     }
                 });
 

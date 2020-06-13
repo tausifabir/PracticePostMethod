@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        Intent intent = getIntent();
         initWidget();
 
        // checkProfilePost();
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .create(ProfileableInterface.class);
 
 
-        profileableInterface.getWithdrawInfo("5")
+        profileableInterface.getWithdrawInfo("3")
                 .enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         errorresultshowTV.setText(""+errorCount);
                         error_reportresultshowTV.setText(""+errorResult);
                         balanceresultshowTV.setText(""+balanceResult);
-                        chargeresultshowTV.setText(""+chargeResult);
+                        chargeresultshowTV.setText(""+jsonObject.get("charge").getAsString());
 
                     }
 

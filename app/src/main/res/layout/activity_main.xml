@@ -9,35 +9,37 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
 
         <TextView
             android:id="@+id/showErrorTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:padding="2dp"
             android:text="error" />
 
 
         <View
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="20dp"
+            android:layout_weight=".1"
+            android:background="#456"
             android:padding="2dp"/>
 
 
         <TextView
             android:id="@+id/showErrorResultTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:text="error"
+            android:layout_marginLeft="8dp"
             android:padding="2dp"/>
 
 
@@ -53,27 +55,30 @@
 
         <TextView
             android:id="@+id/showError_ReportTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:padding="2dp"
             android:text="error_report" />
 
 
         <View
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="2dp"/>
+            android:layout_height="20dp"
+            android:background="#456"
+            android:layout_weight=".1"
+            android:layout_gravity="center"
+           />
 
 
         <TextView
             android:id="@+id/showError_ReportResultTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="3"
             android:text="error_report"
             android:padding="2dp"/>
 
@@ -90,27 +95,30 @@
 
         <TextView
             android:id="@+id/showBalanceTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:padding="2dp"
             android:text="balance" />
 
 
         <View
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="2dp"/>
+            android:layout_height="20dp"
+            android:layout_weight=".1"
+            android:layout_gravity="center"
+            android:background="#456"
+            />
 
 
         <TextView
             android:id="@+id/showBalanceResultTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="3"
             android:text="error"
             android:padding="2dp"/>
 
@@ -126,27 +134,29 @@
 
         <TextView
             android:id="@+id/showChargeTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:padding="2dp"
             android:text="charge" />
 
 
         <View
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="2dp"/>
+            android:layout_height="20dp"
+            android:layout_weight=".1"
+            android:background="#456"
+            />
 
 
         <TextView
             android:id="@+id/showChargeResultTV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="3"
+            android:layout_marginLeft="8dp"
             android:text="error"
             android:padding="2dp"/>
 

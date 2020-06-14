@@ -1,23 +1,23 @@
-package com.example.cricketapiretrofit;
+package com.example.cricketapiretrofit.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.QuickContactBadge;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.cricketapiretrofit.R;
+import com.example.cricketapiretrofit.SharedPreferenceClass.Userpreferences;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameET,passET;
 
     private Button loginBTN,RegistrationBTN;
-    private Sharedpreferences sharedpreferences;
+    private Userpreferences userpreferences;
 
 
 
@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+        userpreferences = new Userpreferences(this);
 
         Intent intent = getIntent();
         intWidget();
@@ -36,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void intWidget() {
 
-        final Sharedpreferences sharedpreferences = new Sharedpreferences( this);
 
         usernameET = findViewById(R.id.usernameText);
         passET = findViewById(R.id.passwordText);
@@ -48,9 +48,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String username = usernameET.getText().toString();
-                String passNum =         passET.getText().toString();
+                String passNum =  passET.getText().toString();
 
-                if(username.equals(sharedpreferences.getUserEmail()) && passNum.equals(sharedpreferences.getUserPass())){
+                Toast.makeText(LoginActivity.this, ""+userpreferences.getUserEmail(), Toast.LENGTH_SHORT).show();
+                if(username.equals(userpreferences.getUserEmail()) && passNum.equals(userpreferences.getUserPass())){
                     Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);

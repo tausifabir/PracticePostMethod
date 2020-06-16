@@ -1,4 +1,4 @@
-package com.example.cricketapiretrofit;
+package com.example.cricketapiretrofit.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +15,7 @@ import com.example.cricketapiretrofit.Adapter.WithdrawAdapter;
 import com.example.cricketapiretrofit.Interface.ProfileableInterface;
 import com.example.cricketapiretrofit.Model.Profile;
 import com.example.cricketapiretrofit.Model.ProfileModel;
+import com.example.cricketapiretrofit.R;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         initWidget();
 
-       // checkProfilePost();
+       //checkProfilePost();
         checkInfo();
 
     }

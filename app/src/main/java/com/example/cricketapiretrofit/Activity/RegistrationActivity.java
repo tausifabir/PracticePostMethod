@@ -1,19 +1,23 @@
-package com.example.cricketapiretrofit;
+package com.example.cricketapiretrofit.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.cricketapiretrofit.R;
+import com.example.cricketapiretrofit.SharedPreferenceClass.Userpreferences;
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText emailET,emailpassET;
     private Button RegisterBTN;
-    private Sharedpreferences sharedpreferences;
+    private Userpreferences userpreferences;
 
 
     public RegistrationActivity() {
@@ -40,14 +44,27 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void registerClick(View view) {
-        Sharedpreferences sharedpreferences = new Sharedpreferences(this);
-        String email = emailET.getText().toString();
+        userpreferences = new Userpreferences(this);
         String pass = emailpassET.getText().toString();
 
-        sharedpreferences.saveUser(email,pass);
-        Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Saved successfully", Toast.LENGTH_SHORT).show();
+        String email = emailET.getText().toString();
+        if(TextUtils.isEmpty(email)){
+            emailET.setError("invaild");
+
+        }else  if(TextUtils.isEmpty(pass)){
+            emailpassET.setError("invaild");
+        }
+        else {
+            userpreferences.saveUser(email,pass);
+            Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, ""+userpreferences.getUserEmail(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Saved successfully", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+
 
     }
 }

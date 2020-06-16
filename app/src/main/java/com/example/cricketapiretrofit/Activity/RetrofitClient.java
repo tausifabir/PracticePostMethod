@@ -1,4 +1,4 @@
-package com.example.cricketapiretrofit;
+package com.example.cricketapiretrofit.Activity;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_rowFundTransferRepo_From"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="8dp"
+        android:text="From: Leadasia"
+
+        app:layout_constraintEnd_toStartOf="@+id/tv_rowFundTransferRepo_To"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_rowFundTransferRepo_SL"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_rowFundTransferRepo_Date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Date: 24 Jun, 2018"
+
+
+        app:layout_constraintEnd_toStartOf="@+id/tv_rowFundTransferRepo_Amount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_rowFundTransferRepo_From"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rowFundTransferRepo_From" />
+
+    <TextView
+        android:id="@+id/tv_rowFundTransferRepo_To"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To: keramat"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_rowFundTransferRepo_From"
+        app:layout_constraintTop_toTopOf="@+id/tv_rowFundTransferRepo_From" />
+
+    <TextView
+        android:id="@+id/tv_rowFundTransferRepo_Amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Amount: 20,000.00"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_rowFundTransferRepo_Date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rowFundTransferRepo_To" />
+
+    <TextView
+        android:id="@+id/tv_rowFundTransferRepo_SL"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="SL"
+        android:textAlignment="center"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_rowFundTransferRepo_From"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#2525"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rowFundTransferRepo_Date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@ public class OperatorPackageFragment extends Fragment {
 
     private RecyclerView packageRecycler;
     private PackageAdapter packageAdapter;
-    List<InternetPakageListModel>  internetPakageListModelList;
+    List<InternetPakageListModel> internetPakageListModelList;
     private InternetPakageModel internetPakageListModels;
     private String operator;
 
@@ -49,7 +49,7 @@ public class OperatorPackageFragment extends Fragment {
     public static OperatorPackageFragment newInstance(String param1, String param2) {
         OperatorPackageFragment fragment = new OperatorPackageFragment();
         Bundle args = new Bundle();
-;
+        ;
         fragment.setArguments(args);
         return fragment;
     }
@@ -71,38 +71,11 @@ public class OperatorPackageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Bundle bundle = this.getArguments();
-        operator = bundle.getString("id");
-        packageRecycler = view.findViewById(R.id.frag_operatortRV);
-        packageRecycler.setHasFixedSize(true);
-        packageRecycler.setAdapter(new GridLayoutManager(getContext(),2));
 
-        internetPakageListModels = new ArrayList<>();
 
-        loadInternetPakage();
 
     }
 
-    private void loadInternetPakage() {
 
 
-        ProfileableInterface profileableInterface = RetrofitClient
-                .getClient(MainActivity.BaseUrl)
-                .create(ProfileableInterface.class);
-
-       profileableInterface.getInternetPakage(internetPakageListModels.getReport().get(4).getID(),"")
-               .enqueue(new Callback<InternetPakageListModel>() {
-                   @Override
-                   public void onResponse(Call<InternetPakageListModel> call, Response<InternetPakageListModel> response) {
-                       if(response.isSuccessful()){
-
-                           inter
-                       }
-                   }
-
-                   @Override
-                   public void onFailure(Call<InternetPakageListModel> call, Throwable t) {
-
-                   }
-               });
 }

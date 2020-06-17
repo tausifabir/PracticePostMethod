@@ -1,11 +1,12 @@
+
 package com.example.cricketapiretrofit.Model;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+public class InternetPackageModel {
 
-public class InternetPakageModel {
     @SerializedName("error")
     @Expose
     private Integer error;
@@ -15,8 +16,6 @@ public class InternetPakageModel {
     @SerializedName("report")
     @Expose
     private List<InternetPakageListModel> report = null;
-
-    private final static long serialVersionUID = -1491163043877212974L;
 
     public Integer getError() {
         return error;
@@ -41,4 +40,5 @@ public class InternetPakageModel {
     public void setReport(List<InternetPakageListModel> report) {
         this.report = report;
     }
+
 }

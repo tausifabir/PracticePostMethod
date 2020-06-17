@@ -1,7 +1,7 @@
 package com.example.cricketapiretrofit.Interface;
 
 import com.example.cricketapiretrofit.Model.FundTransferReportDataModel;
-import com.example.cricketapiretrofit.Model.InternetPakageListModel;
+import com.example.cricketapiretrofit.Model.InternetPackageModel;
 import com.example.cricketapiretrofit.Model.ProfileModel;
 import com.google.gson.JsonObject;
 
@@ -34,7 +34,7 @@ public interface ProfileableInterface {
 
     @POST("api/load_package.php")
     @FormUrlEncoded
-    Call<InternetPakageListModel> getInternetPakage(@Field("user_id") String userId,
-                                                    @Field("operator") String operator);
+    Call<InternetPackageModel> getInternetPakage(@Field("user_id") String userId,
+                                                 @Field("operator") String operator);
 
 }

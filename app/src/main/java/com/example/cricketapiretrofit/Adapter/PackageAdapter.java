@@ -1,7 +1,6 @@
 package com.example.cricketapiretrofit.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cricketapiretrofit.Model.InternetPackageModel;
 import com.example.cricketapiretrofit.Model.InternetPakageListModel;
 import com.example.cricketapiretrofit.R;
 
@@ -18,7 +18,7 @@ import java.util.List;
 public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.BalanceViewHolder>
 {
     private Context context;
-    private List<InternetPakageListModel> internetBalanceDetails;
+    private List<InternetPakageListModel> internetPakageListModelList;
     private OnItemClickListner listner;
 
 
@@ -35,12 +35,12 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.BalanceV
     }
 
     //constructor
-    public PackageAdapter(Context myContext, List<InternetPakageListModel> internetBalanceDetails)
-    {
-        context = myContext;
-        this.internetBalanceDetails = internetBalanceDetails;
-    }
 
+
+    public PackageAdapter(Context context, List<InternetPakageListModel> internetPakageListModelList) {
+        this.context = context;
+        this.internetPakageListModelList = internetPakageListModelList;
+    }
 
     //creating viewholder to get the layout
     @NonNull
@@ -56,11 +56,11 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.BalanceV
     @Override
     public void onBindViewHolder(@NonNull BalanceViewHolder holder, int position)
     {
-        InternetPakageListModel internetPakageListModel = internetBalanceDetails.get(position);
 
 
-        holder.dataAmount.setText(internetPakageListModel.getTitle());
-        holder.balance.setText(internetPakageListModel.getAmount()+"৳");
+
+        holder.dataAmount.setText(internetPakageListModelList.get(position).getTitle());
+        holder.balance.setText(internetPakageListModelList.get(position).getAmount()+"৳");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +76,8 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.BalanceV
     @Override
     public int getItemCount()
     {
-        return internetBalanceDetails.size();
+        return  internetPakageListModelList.size();
+
     }
 
 

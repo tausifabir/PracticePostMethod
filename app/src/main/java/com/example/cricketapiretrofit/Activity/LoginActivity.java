@@ -1,6 +1,7 @@
 package com.example.cricketapiretrofit.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,16 +22,29 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBTN,RegistrationBTN;
     private Userpreferences userpreferences;
 
+    private Toolbar toolbar;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newlogin2);
+        setContentView(R.layout.activity_dashboard);
         userpreferences = new Userpreferences(this);
 
-        Intent intent = getIntent();
-        intWidget();
+      //  Intent intent = getIntent();
+       // intWidget();
+
+        toolbar = findViewById(R.id.toolbar);
+        imageView = findViewById(R.id.imageViewTV);
+
+        setSupportActionBar(toolbar);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+
+
 
 
     }
@@ -45,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBTN = findViewById(R.id.loginBtn);
         RegistrationBTN = findViewById(R.id.registrationBtn);
          */
-        imageView = findViewById(R.id.imageViewTV);
+   /*     imageView = findViewById(R.id.imageViewTV);
         usernameET = findViewById(R.id.userNameET);
         passET = findViewById(R.id.passET);
         RegistrationBTN = findViewById(R.id.loginBTN);
@@ -68,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
+*/
 
 
 

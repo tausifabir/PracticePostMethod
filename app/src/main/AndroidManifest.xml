@@ -15,17 +15,23 @@
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.LoginActivity">
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
         </activity>
 
         <activity android:name=".Activity.RegistrationActivity" />
         <activity android:name=".Activity.ReportActivity" />
 
-        <activity android:name=".Activity.TablayoutActivity"></activity>
+        <activity android:name=".Activity.TablayoutActivity">
+
+
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

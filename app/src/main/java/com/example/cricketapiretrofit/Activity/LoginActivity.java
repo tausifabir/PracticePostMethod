@@ -29,18 +29,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_fundtransfer);
         userpreferences = new Userpreferences(this);
 
       //  Intent intent = getIntent();
        // intWidget();
 
-        toolbar = findViewById(R.id.toolbar);
-        imageView = findViewById(R.id.imageViewTV);
+       /*toolbar = findViewById(R.id.toolbar8);*/
+       // imageView = findViewById(R.id.imageViewTV);
 
-        setSupportActionBar(toolbar);
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       getSupportActionBar().setDisplayShowHomeEnabled(true);
+       /* setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
 
 
 

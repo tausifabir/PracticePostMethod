@@ -16,6 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="15dp"
         android:hint="Type Your UserName"
+        android:textColorHint="#E4E3E3"
         android:inputType="text"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -34,6 +35,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="15dp"
         android:hint="Type Your Password"
+        android:textColorHint="#E4E3E3"
         android:inputType="number"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -44,7 +46,7 @@
 
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/loginBtn1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -76,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn1" />
 
     <ImageView
         android:id="@+id/backImage"

@@ -35,5 +35,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.github.JetradarMobile:android-snowfall:1.1.6'
 
+    implementation "com.airbnb.android:lottie:3.4.1"
 }

@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.cricketapiretrofit.R;
@@ -19,6 +20,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button RegisterBTN;
     private Userpreferences userpreferences;
 
+    private ImageView imageView4;
+
 
     public RegistrationActivity() {
     }
@@ -26,16 +29,25 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_registration2);
 
         Intent intent = getIntent();
 
+        imageView4 = findViewById(R.id.imageView4);
+
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegistrationActivity.this,FundActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
-        intWidget();
+       /* intWidget();*/
     }
 
-    private void intWidget() {
+  /*  private void intWidget() {
 
         emailET = findViewById(R.id.emailText);
         emailpassET = findViewById(R.id.emailpassText);
@@ -66,5 +78,5 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 }

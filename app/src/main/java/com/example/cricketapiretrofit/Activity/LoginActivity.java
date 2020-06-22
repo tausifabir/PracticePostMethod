@@ -14,23 +14,26 @@ import android.widget.Toast;
 import com.example.cricketapiretrofit.R;
 import com.example.cricketapiretrofit.SharedPreferenceClass.Userpreferences;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameET,passET;
     private ImageView imageView;
 
-    private Button loginBTN,RegistrationBTN;
+    private Button loginBtn,RegistrationBTN;
     private Userpreferences userpreferences;
 
     private Toolbar toolbar;
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fundtransfer);
+        setContentView(R.layout.activity_loginspc);
         userpreferences = new Userpreferences(this);
+
 
       //  Intent intent = getIntent();
        // intWidget();
@@ -41,6 +44,17 @@ public class LoginActivity extends AppCompatActivity {
        /* setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);*/
+
+
+       loginBtn = findViewById(R.id.loginBtn);
+
+       loginBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(LoginActivity.this,RegistrationActivity.class);
+               startActivity(intent);
+           }
+       });
 
 
 

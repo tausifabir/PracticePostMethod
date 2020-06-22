@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/userNameET" />
 
     <Button
-        android:id="@+id/loginBTN"
+        android:id="@+id/loginBtn3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -108,7 +108,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn3" />
 
     <TextView
         android:id="@+id/signUpTV"
@@ -123,5 +123,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/forgotTV"
-        app:layout_constraintTop_toBottomOf="@+id/loginBTN" />
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

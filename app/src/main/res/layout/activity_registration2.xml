@@ -34,13 +34,13 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_one"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        android:background="@drawable/bg_one">
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -49,7 +49,7 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="50dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,11 +101,10 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
-        android:maxLines="1"
         android:gravity="center"
-        android:text="REgistration part one "
+        android:text="REgistration part one"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -120,7 +119,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:maxLines="1"
         android:text="REgistration part two "
         android:gravity="center"
         android:textAllCaps="true"

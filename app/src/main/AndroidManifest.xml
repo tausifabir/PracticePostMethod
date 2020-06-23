@@ -3,6 +3,9 @@
     package="com.example.cricketapiretrofit">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -11,12 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Rain">
 
 
+
+
+        <activity android:name=".Activity.RainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
         </activity>
+
+
+
+
+
         <activity android:name=".Activity.NewLoginActivity2" />
         <activity android:name=".Activity.NewLoginActivity" />
         <activity android:name=".Activity.LoginActivity2" />
@@ -25,11 +41,7 @@
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.LoginActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.RegistrationActivity" />
         <activity android:name=".Activity.ReportActivity" />

@@ -26,22 +26,22 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/profile_bg"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
+        <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/dashboardUserID"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user1" />
+            app:srcCompat="@drawable/superman_injustice" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -107,7 +107,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:layout_editor_absoluteX="-16dp">
 
@@ -126,11 +126,11 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/joining_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout6"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -167,10 +167,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/transcation_shape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout8"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -209,11 +209,11 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/team_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout10"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
 
@@ -251,10 +251,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/shop_shape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
@@ -291,11 +291,11 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/support_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout11"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
@@ -332,10 +332,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:background="@drawable/other_shape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout12"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
 

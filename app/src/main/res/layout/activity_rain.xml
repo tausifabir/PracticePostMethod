@@ -28,6 +28,10 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="130dp"
         android:background="@drawable/profile_bg"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -40,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/superman_injustice" />
+            app:srcCompat="@drawable/profile_pic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,7 +133,7 @@
                 android:background="@drawable/joining_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout6"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -212,7 +216,7 @@
                 android:background="@drawable/team_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout10"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
@@ -294,7 +298,7 @@
                 android:background="@drawable/support_shape"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout11"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
@@ -380,7 +384,8 @@
         android:src="@drawable/facebook"
         app:layout_constraintEnd_toStartOf="@+id/youtubeIcon"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/youtubeIcon"
@@ -391,7 +396,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/twitterIcon"
@@ -400,7 +406,8 @@
         android:layout_marginTop="8dp"
         android:src="@drawable/twitter"
         app:layout_constraintStart_toEndOf="@+id/youtubeIcon"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:contentDescription="TODO" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

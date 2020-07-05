@@ -1,34 +1,18 @@
 package com.example.cricketapiretrofit.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.app.Service;
-import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Looper;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.example.cricketapiretrofit.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.LocationSettingsResponse;
-import com.google.android.gms.location.SettingsClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 
 
 public class RainActivity extends AppCompatActivity {
@@ -37,7 +21,7 @@ public class RainActivity extends AppCompatActivity {
 
     private Location location;
 
-    private TextView latTV, lngTV;
+    private ImageView joingImg,transcationImg,teamImg,shopImg,supportImg,otherImg,dashboardUserID;
 
 
     LocationRequest locationRequest;
@@ -46,21 +30,48 @@ public class RainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rain);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        setContentView(R.layout.activity_joiningdashboard);
+
+        joingImg = findViewById(R.id.imageView10);
+        transcationImg = findViewById(R.id.imageView11);
+        teamImg = findViewById(R.id.imageView12);
+        shopImg = findViewById(R.id.imageView13);
+        supportImg = findViewById(R.id.imageView14);
+        otherImg = findViewById(R.id.imageView15);
+        dashboardUserID = findViewById(R.id.dashboardUserID);
+
+
+
+
+
 
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
+
+        rotateAnimation();
 
 
 
     }
 
 
+    private void rotateAnimation(){
 
 
+        Animation RotateClk = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_clockwise);
+        Animation antiRotateClk = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_anticlockwise);
 
+        joingImg.startAnimation(RotateClk);
+        teamImg.startAnimation(RotateClk);
+        supportImg.startAnimation(RotateClk);
 
+        transcationImg.startAnimation(antiRotateClk);
+        shopImg.startAnimation(antiRotateClk);
+        otherImg.startAnimation(antiRotateClk);
+
+    }
 
 
 }

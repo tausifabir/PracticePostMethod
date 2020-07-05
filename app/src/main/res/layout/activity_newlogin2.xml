@@ -5,10 +5,27 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
     <View
         android:id="@+id/viewShow2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:background="@drawable/change_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,8 +39,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="16dp"
-
         android:drawableStart="@drawable/change_person_24"
+        android:background="@drawable/change_round"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="User name"
@@ -42,6 +59,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/change_round"
         android:drawableStart="@drawable/change_lock_24"
         android:drawablePadding="16dp"
         android:ems="10"
@@ -54,27 +72,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userNameET" />
 
-    <Button
-        android:id="@+id/loginBtn3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/colorPrimary"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passET" />
+            <Button
+                android:id="@+id/loginBtn3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_login"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passET" />
 
     <View
         android:id="@+id/viewShow"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="150dp"
         android:background="@drawable/nature"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -86,7 +105,7 @@
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/logo_panda"
         app:layout_constraintBottom_toTopOf="@+id/userNameET"
@@ -104,7 +123,7 @@
         android:layout_marginTop="24dp"
         android:text="Forgot password ?"
         android:textAllCaps="true"
-        android:textColor="@color/colorAsh"
+        android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,8 +139,13 @@
         android:textAllCaps="true"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/forgotTV"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

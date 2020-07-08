@@ -29,7 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration2);
+        setContentView(R.layout.activity_registration3);
 
         Intent intent = getIntent();
 
